@@ -1,0 +1,60 @@
+{
+  "id": "Tshirt",
+  "description": "Model of a simple t-shirt, used for showcasing a logic model",
+  "multiValuedSeparator": null,
+  "variables": [
+    {
+      "id": "Color",
+      "type": "string",
+      "domain": ["Blue", "Green", "Red", "Yellow"],
+      "description": "The color of the T-Shirt"
+    },
+    {
+      "id": "Size",
+      "type": "string",
+      "domain": ["Small", "Medium", "Large", "XLarge"]
+    },
+    {
+      "id": "Neck",
+      "type": "string",
+      "domain": ["Round", "VShaped"]
+    },
+    {
+      "id": "Material",
+      "type": "string",
+      "domain": ["Cotton", "Flax", "Polyester"]
+    },
+    {
+      "id": "Itches",
+      "type": "string",
+      "domain": ["No", "Yes"]
+    }
+  ],
+  "multiValuedGroups": [],
+  "rules": [
+    {
+      "id": "Red size and neck",
+      "expr": "(Color = 2) -> ((Size != 2) and (Neck = 0))"
+    },
+    {
+      "id": "Blue material and sizes",
+      "expr": "(Color = 0) -> ((Material = 0) and ((Size = 0) or (Size = 1)))"
+    },
+    {
+      "id": "Polyester Itches",
+      "expr": "(Material = 2) -> (Itches = 1)"
+    },
+    {
+      "id": "Cotton does not itch",
+      "expr": "(Material = 0) -> (Itches = 0)"
+    },
+    {
+      "id": "V-neck in green and no flax",
+      "expr": "(Neck = 1) -> ((Color = 1) or not (Material = 1))"
+    },
+    {
+      "id": "Yellow does not itch",
+      "expr": "(Itches = 1) -> (Color != 3)"
+    }
+  ]
+}

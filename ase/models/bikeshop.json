@@ -1,0 +1,876 @@
+{
+  "id": "BikeShop",
+  "description": "Standard bike-shop example from Modeler",
+  "variables": [
+    {
+      "id": "Person.Gender",
+      "type": "string",
+      "domain": [
+        "Female",
+        "Male"
+      ]
+    },
+    {
+      "id": "Person.Frametype", 
+      "type": "string",
+      "domain": [
+        "City Bike",
+        "Grandma Bike",
+        "Mountain Bike",
+        "Racer Bike"
+      ]
+    },
+    {
+      "id": "Person.Height",
+      "type": "string",
+      "domain": [
+        "150_160cm",
+        "160_170cm",
+        "170_180cm",
+        "180_190cm",
+        "190_200cm"
+      ]
+    },
+    {
+      "id": "Person.SizeMin",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "13inch",
+        "14inch",
+        "15inch",
+        "16inch",
+        "17inch",
+        "18inch",
+        "19inch",
+        "20inch",
+        "21inch",
+        "22inch",
+        "23inch",
+        "24inch",
+        "25inch",
+        "28inch"
+      ]
+    },
+    {
+      "id": "Person.SizeMax",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "13inch",
+        "14inch",
+        "15inch",
+        "16inch",
+        "17inch",
+        "18inch",
+        "19inch",
+        "20inch",
+        "21inch",
+        "22inch",
+        "23inch",
+        "24inch",
+        "25inch",
+        "28inch"
+      ]
+    },
+    {
+      "id": "Frame.ItemId",
+      "type": "string",
+      "domain": [
+        "BFL-CLA",
+        "CEN-BAS",
+        "CEN-BASF",
+        "CEN-BASFM",
+        "CEN-BASL",
+        "CEN-BASLM",
+        "CEN-BASM",
+        "CEN-BLV",
+        "CEN-CHA",
+        "CEN-CHAL",
+        "CEN-CRP",
+        "CEN-CRPL",
+        "CEN-DIS",
+        "CEN-DISL",
+        "CEN-DKI",
+        "CEN-ETY",
+        "CEN-ETYL",
+        "CEN-FAR",
+        "CEN-HEL",
+        "CEN-INV",
+        "CEN-NIT",
+        "CEN-OFD",
+        "CEN-OXY",
+        "CEN-OXYM",
+        "CEN-ULT",
+        "COL-SBP",
+        "FAG-7005",
+        "FAG-7020",
+        "FAG-EAS",
+        "JUP-CRU",
+        "JUP-INS",
+        "JUP-MIL",
+        "JUP-STR",
+        "KIL-L32",
+        "KIL-PRI",
+        "SCH-MES",
+        "SCH-MOA"
+      ]
+    },
+    {
+      "id": "Frame.Color",
+      "type": "string",
+      "domain": [
+        "Black",
+        "BlPurple",
+        "Blue",
+        "Brown",
+        "Creme",
+        "Green",
+        "Grey",
+        "LtBlue",
+        "LtGreen",
+        "Purple",
+        "Red",
+        "Silver",
+        "White",
+        "Yellow"
+      ]
+    },
+    {
+      "id": "Frame.Comfort",
+      "type": "string",
+      "domain": [
+        "CF1",
+        "CF2",
+        "CF3"
+      ]
+    },
+    {
+      "id": "Frame.Frametype",
+      "type": "string",
+      "domain": [
+        "City Bike",
+        "Grandma Bike",
+        "Mountain Bike",
+        "Racer Bike"
+      ]
+    },
+    {
+      "id": "Frame.Geartype",
+      "type": "string",
+      "domain": [
+        "Ext",
+        "Int"
+      ]
+    },
+    {
+      "id": "Frame.Gender",
+      "type": "string",
+      "domain": [
+        "Female",
+        "Male"
+      ]
+    },
+    {
+      "id": "Frame.Size",
+      "type": "string",
+      "domain": [
+        "13inch",
+        "14inch",
+        "15inch",
+        "16inch",
+        "17inch",
+        "18inch",
+        "19inch",
+        "20inch",
+        "21inch",
+        "22inch",
+        "23inch",
+        "24inch",
+        "25inch",
+        "28inch"
+      ]
+    },
+    {
+      "id": "Gear.ItemId",
+      "type": "string",
+      "domain": [
+        "ACE",
+        "CAM-AVA",
+        "CAM-MIR",
+        "CAM-VEL",
+        "SHI-105STI",
+        "SHI-ACE",
+        "SHI-DEO",
+        "SHI-DUR",
+        "SHI-NEX",
+        "SHI-RSX",
+        "SORA",
+        "TIAG",
+        "TORP",
+        "ULTR"
+      ]
+    },
+    {
+      "id": "Gear.Frametype",
+      "type": "string",
+      "domain": [
+        "City Bike",
+        "Grandma Bike",
+        "Mountain Bike",
+        "Racer Bike"
+      ]
+    },
+    {
+      "id": "Gear.Geartype",
+      "type": "string",
+      "domain": [
+        "Ext",
+        "Int"
+      ]
+    },
+    {
+      "id": "Gear.Speeds",
+      "type": "string",
+      "domain": [
+        "03sp",
+        "04sp",
+        "05sp",
+        "07sp",
+        "16sp",
+        "18sp",
+        "21sp",
+        "24sp",
+        "27sp"
+      ]
+    },
+    {
+      "id": "Pedal.ItemId",
+      "type": "string",
+      "domain": [
+        "BPLA",
+        "CAM-CHO",
+        "CAM-REC",
+        "PD5500",
+        "PD6600",
+        "PDC101",
+        "PDC105",
+        "PDM434",
+        "PDM545"
+      ]
+    },
+    {
+      "id": "Pedal.Pedaltype",
+      "type": "string",
+      "domain": [
+        "Clip",
+        "SPD",
+        "Std"
+      ]
+    },
+    {
+      "id": "Pedal.Frametype",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "City Bike",
+        "Grandma Bike",
+        "Mountain Bike",
+        "Racer Bike"
+      ]
+    },
+    {
+      "id": "Rim.ItemId",
+      "type": "string",
+      "domain": [
+        "CAM-ATL",
+        "CAM-MEX",
+        "CAM-MOS",
+        "CAM-PRO",
+        "COSM",
+        "CROS",
+        "CXP33",
+        "HEL",
+        "MA3",
+        "OPEN-PRO",
+        "T519",
+        "X221"
+      ]
+    },
+    {
+      "id": "Rim.Diameter",
+      "type": "string",
+      "domain": [
+        "50cm",
+        "65cm",
+        "70cm"
+      ]
+    },
+    {
+      "id": "Rim.Material",
+      "type": "string",
+      "domain": [
+        "Alu1",
+        "Alu2",
+        "Alu3",
+        "Alu4",
+        "Steel"
+      ]
+    },
+    {
+      "id": "Rim.Width",
+      "type": "string",
+      "domain": [
+        "0.85cm",
+        "1.00cm",
+        "1.25cm",
+        "1.50cm",
+        "1.75cm"
+      ]
+    },
+    {
+      "id": "Rim.SizeMin",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "13inch",
+        "14inch",
+        "15inch",
+        "16inch",
+        "17inch",
+        "18inch",
+        "19inch",
+        "20inch",
+        "21inch",
+        "22inch",
+        "23inch",
+        "24inch",
+        "25inch",
+        "28inch"
+      ]
+    },
+    {
+      "id": "Rim.SizeMax",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "13inch",
+        "14inch",
+        "15inch",
+        "16inch",
+        "17inch",
+        "18inch",
+        "19inch",
+        "20inch",
+        "21inch",
+        "22inch",
+        "23inch",
+        "24inch",
+        "25inch",
+        "28inch"
+      ]
+    },
+    {
+      "id": "Tire.ItemId",
+      "type": "string",
+      "domain": [
+        "ALW",
+        "ATL",
+        "BEAUM",
+        "COUR",
+        "EXTR",
+        "KEND",
+        "LIZZ",
+        "PAN-AVV",
+        "PAN-CAT",
+        "PAN-EVE",
+        "PAN-STR",
+        "PAN-TOU",
+        "ROMA",
+        "TECH",
+        "TRAC",
+        "TRIA"
+      ]
+    },
+    {
+      "id": "Tire.Drygrip",
+      "type": "string",
+      "domain": [
+        "DG1",
+        "DG2",
+        "DG3"
+      ]
+    },
+    {
+      "id": "Tire.Diameter",
+      "type": "string",
+      "domain": [
+        "50cm",
+        "65cm",
+        "70cm"
+      ]
+    },
+    {
+      "id": "Tire.Profile",
+      "type": "string",
+      "domain": [
+        "19mm",
+        "20mm",
+        "21mm",
+        "22mm",
+        "23mm",
+        "25mm",
+        "28mm",
+        "30mm",
+        "32mm",
+        "35mm",
+        "38mm"
+      ]
+    },
+    {
+      "id": "Tire.Reflex",
+      "type": "string",
+      "domain": [
+        "No reflex",
+        "Side Reflex"
+      ]
+    },
+    {
+      "id": "Tire.Wetgrip",
+      "type": "string",
+      "domain": [
+        "WG1",
+        "WG2",
+        "WG3"
+      ]
+    },
+    {
+      "id": "Tire.Width",
+      "type": "string",
+      "domain": [
+        "0.85cm",
+        "1.00cm",
+        "1.25cm",
+        "1.50cm",
+        "1.75cm"
+      ]
+    },
+    {
+      "id": "Tire.Frametype",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "City Bike",
+        "Grandma Bike",
+        "Mountain Bike",
+        "Racer Bike"
+      ]
+    },
+    {
+      "id": "Tire.ProfileMin",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "19mm",
+        "20mm",
+        "21mm",
+        "22mm",
+        "23mm",
+        "25mm",
+        "28mm",
+        "30mm",
+        "32mm",
+        "35mm",
+        "38mm"
+      ]
+    },
+    {
+      "id": "Tire.ProfileMax",
+      "private": false,
+      "type": "string",
+      "domain": [
+        "19mm",
+        "20mm",
+        "21mm",
+        "22mm",
+        "23mm",
+        "25mm",
+        "28mm",
+        "30mm",
+        "32mm",
+        "35mm",
+        "38mm"
+      ]
+    },
+    {
+      "id": "Options_.Lock.HaveLock",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Lock.ItemId",
+      "type": "string",
+      "domain": [
+        "LOCK"
+      ]
+    },
+    {
+      "id": "Options_.Propstand.HavePropstand",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Propstand.ItemId",
+      "type": "string",
+      "domain": [
+        "PROP"
+      ]
+    },
+    {
+      "id": "Options_.Mudguard.HaveMudguard",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Mudguard.ItemId",
+      "type": "string",
+      "domain": [
+        "MUDG"
+      ]
+    },
+    {
+      "id": "Options_.Shoe.HaveShoe",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Shoe.ItemId",
+      "type": "string",
+      "domain": [
+        "SHR072",
+        "SHR090",
+        "SHR150",
+        "SHR212"
+      ]
+    },
+    {
+      "id": "Options_.Shoe.Pedaltype",
+      "type": "string",
+      "domain": [
+        "Clip",
+        "SPD",
+        "Std"
+      ]
+    },
+    {
+      "id": "Options_.Carrier.HaveCarrier",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Carrier.ItemId",
+      "type": "string",
+      "domain": [
+        "CARR"
+      ]
+    },
+    {
+      "id": "Options_.Cateye.HaveCateye",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Cateye.ItemId",
+      "type": "string",
+      "domain": [
+        "CATEYE"
+      ]
+    },
+    {
+      "id": "Options_.Basket.HaveBasket",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Basket.ItemId",
+      "type": "string",
+      "domain": [
+        "BASK"
+      ]
+    },
+    {
+      "id": "Options_.Pump.HavePump",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Pump.ItemId",
+      "type": "string",
+      "domain": [
+        "PUMP"
+      ]
+    },
+    {
+      "id": "Options_.Bottle.HaveBottle",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Bottle.ItemId",
+      "type": "string",
+      "domain": [
+        "BOTL"
+      ]
+    },
+    {
+      "id": "Options_.Frontreflex.HaveFrontreflex",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Frontreflex.ItemId",
+      "type": "string",
+      "domain": [
+        "FRO-REF"
+      ]
+    },
+    {
+      "id": "Options_.Sidereflex.HaveSidereflex",
+      "type": "bool"
+    },
+    {
+      "id": "Options_.Sidereflex.ItemId",
+      "type": "string",
+      "domain": [
+        "SID-REF"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "Rule0",
+      "description": "Rule at line 334",
+      "expr": "[Tire.Profile] >= [Tire.ProfileMin]"
+    },
+    {
+      "id": "Rule1",
+      "description": "Rule at line 337",
+      "expr": "[Tire.Profile] <= [Tire.ProfileMax]"
+    },
+    {
+      "id": "Rule2",
+      "description": "Rule at line 340",
+      "expr": "if not [Options_.Shoe.HaveShoe] then ([Options_.Shoe.ItemId] = 0) else true"
+    },
+    {
+      "id": "Rule3",
+      "description": "Rule at line 343",
+      "expr": "[Gear.Frametype] = [Frame.Frametype]"
+    },
+    {
+      "id": "Rule4",
+      "description": "Rule at line 346",
+      "expr": "[Gear.Geartype] = [Frame.Geartype]"
+    },
+    {
+      "id": "Rule5",
+      "description": "Rule at line 349",
+      "expr": "[Tire.Frametype] = [Frame.Frametype]"
+    },
+    {
+      "id": "Rule6",
+      "description": "Rule at line 352",
+      "expr": "[Frame.Size] >= [Rim.SizeMin]"
+    },
+    {
+      "id": "Rule7",
+      "description": "Rule at line 355",
+      "expr": "[Frame.Size] <= [Rim.SizeMax]"
+    },
+    {
+      "id": "Rule8",
+      "description": "Rule at line 358",
+      "expr": "[Rim.Width] = [Tire.Width]"
+    },
+    {
+      "id": "Rule9",
+      "description": "Rule at line 361",
+      "expr": "[Rim.Diameter] = [Tire.Diameter]"
+    },
+    {
+      "id": "Rule10",
+      "description": "Rule at line 364",
+      "expr": "if [Options_.Shoe.HaveShoe] then ([Options_.Shoe.Pedaltype] = [Pedal.Pedaltype]) else true"
+    },
+    {
+      "id": "Rule11",
+      "description": "Rule at line 367",
+      "expr": "if [Options_.Carrier.HaveCarrier] then [Options_.Mudguard.HaveMudguard] else true"
+    },
+    {
+      "id": "Rule12",
+      "description": "Rule at line 370",
+      "expr": "not ([Options_.Pump.HavePump] and [Options_.Bottle.HaveBottle])"
+    },
+    {
+      "id": "Rule13",
+      "description": "Rule at line 373",
+      "expr": "[Frame.Size] >= [Person.SizeMin]"
+    },
+    {
+      "id": "Rule14",
+      "description": "Rule at line 376",
+      "expr": "[Frame.Size] <= [Person.SizeMax]"
+    },
+    {
+      "id": "Rule15",
+      "description": "Rule at line 379",
+      "expr": "[Frame.Frametype] = [Person.Frametype]"
+    },
+    {
+      "id": "Rule16",
+      "description": "Rule at line 382",
+      "expr": "[Frame.Gender] = [Person.Gender]"
+    },
+    {
+      "id": "Rule17",
+      "description": "Rule at line 385",
+      "expr": "([Tire.Reflex] = 1) or [Options_.Sidereflex.HaveSidereflex]"
+    },
+    {
+      "id": "Rule18",
+      "description": "Rule at line 428",
+      "expr": "((((((((true and ([Person.Frametype] = 3)) and ([Person.Height] = 0)) and ([Person.SizeMin] = 4)) and ([Person.SizeMax] = 7)) or ((((true and ([Person.Frametype] = 3)) and ([Person.Height] = 1)) and ([Person.SizeMin] = 6)) and ([Person.SizeMax] = 9))) or ((((true and ([Person.Frametype] = 3)) and ([Person.Height] = 2)) and ([Person.SizeMin] = 8)) and ([Person.SizeMax] = 11))) or (((((true and ([Person.Frametype] = 3)) and ([Person.Height] = 3)) and ([Person.SizeMin] = 10)) and ([Person.SizeMax] = 13)) or ((((true and ([Person.Frametype] = 3)) and ([Person.Height] = 4)) and ([Person.SizeMin] = 12)) and ([Person.SizeMax] = 13)))) or (((((((true and ([Person.Frametype] = 0)) and ([Person.Height] = 0)) and ([Person.SizeMin] = 4)) and ([Person.SizeMax] = 7)) or ((((true and ([Person.Frametype] = 0)) and ([Person.Height] = 1)) and ([Person.SizeMin] = 6)) and ([Person.SizeMax] = 9))) or ((((true and ([Person.Frametype] = 0)) and ([Person.Height] = 2)) and ([Person.SizeMin] = 8)) and ([Person.SizeMax] = 11))) or (((((true and ([Person.Frametype] = 0)) and ([Person.Height] = 3)) and ([Person.SizeMin] = 10)) and ([Person.SizeMax] = 13)) or ((((true and ([Person.Frametype] = 0)) and ([Person.Height] = 4)) and ([Person.SizeMin] = 12)) and ([Person.SizeMax] = 13))))) or ((((((((true and ([Person.Frametype] = 2)) and ([Person.Height] = 0)) and ([Person.SizeMin] = 2)) and ([Person.SizeMax] = 5)) or ((((true and ([Person.Frametype] = 2)) and ([Person.Height] = 1)) and ([Person.SizeMin] = 3)) and ([Person.SizeMax] = 6))) or ((((true and ([Person.Frametype] = 2)) and ([Person.Height] = 2)) and ([Person.SizeMin] = 4)) and ([Person.SizeMax] = 7))) or (((((true and ([Person.Frametype] = 2)) and ([Person.Height] = 3)) and ([Person.SizeMin] = 5)) and ([Person.SizeMax] = 9)) or ((((true and ([Person.Frametype] = 2)) and ([Person.Height] = 4)) and ([Person.SizeMin] = 5)) and ([Person.SizeMax] = 9)))) or (((((((true and ([Person.Frametype] = 1)) and ([Person.Height] = 0)) and ([Person.SizeMin] = 0)) and ([Person.SizeMax] = 13)) or ((((true and ([Person.Frametype] = 1)) and ([Person.Height] = 1)) and ([Person.SizeMin] = 0)) and ([Person.SizeMax] = 13))) or ((((true and ([Person.Frametype] = 1)) and ([Person.Height] = 3)) and ([Person.SizeMin] = 0)) and ([Person.SizeMax] = 13))) or (((((true and ([Person.Frametype] = 1)) and ([Person.Height] = 3)) and ([Person.SizeMin] = 0)) and ([Person.SizeMax] = 13)) or ((((true and ([Person.Frametype] = 1)) and ([Person.Height] = 4)) and ([Person.SizeMin] = 0)) and ([Person.SizeMax] = 13)))))"
+    },
+    {
+      "id": "Rule19",
+      "description": "Rule at line 470",
+      "expr": "(((((((true and ([Frame.ItemId] = 0)) and ([Frame.Frametype] = 1)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Frametype] = 0))) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Frametype] = 0))) or (((true and ([Frame.ItemId] = 3)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Frametype] = 0)))) or (((((true and ([Frame.ItemId] = 5)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Frametype] = 0))) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Frametype] = 1))) or (((true and ([Frame.ItemId] = 8)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Frametype] = 0))))) or ((((((true and ([Frame.ItemId] = 10)) and ([Frame.Frametype] = 2)) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Frametype] = 2))) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Frametype] = 0))) or (((true and ([Frame.ItemId] = 13)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Frametype] = 2)))) or (((((true and ([Frame.ItemId] = 15)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 16)) and ([Frame.Frametype] = 0))) or ((true and ([Frame.ItemId] = 17)) and ([Frame.Frametype] = 2))) or (((true and ([Frame.ItemId] = 18)) and ([Frame.Frametype] = 3)) or ((true and ([Frame.ItemId] = 19)) and ([Frame.Frametype] = 3)))))) or (((((((true and ([Frame.ItemId] = 20)) and ([Frame.Frametype] = 3)) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Frametype] = 2))) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Frametype] = 3))) or (((true and ([Frame.ItemId] = 23)) and ([Frame.Frametype] = 3)) or ((true and ([Frame.ItemId] = 24)) and ([Frame.Frametype] = 3)))) or (((((true and ([Frame.ItemId] = 25)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 26)) and ([Frame.Frametype] = 3))) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Frametype] = 3))) or (((true and ([Frame.ItemId] = 28)) and ([Frame.Frametype] = 3)) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Frametype] = 2))))) or ((((((true and ([Frame.ItemId] = 30)) and ([Frame.Frametype] = 0)) or ((true and ([Frame.ItemId] = 30)) and ([Frame.Frametype] = 2))) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Frametype] = 0))) or (((true and ([Frame.ItemId] = 31)) and ([Frame.Frametype] = 2)) or ((true and ([Frame.ItemId] = 32)) and ([Frame.Frametype] = 0)))) or ((((true and ([Frame.ItemId] = 33)) and ([Frame.Frametype] = 2)) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Frametype] = 2))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Frametype] = 2)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Frametype] = 2))))))"
+    },
+    {
+      "id": "Rule20",
+      "description": "Rule at line 563",
+      "expr": "((((((((true and ([Frame.ItemId] = 0)) and ([Frame.Color] = 0)) or ((true and ([Frame.ItemId] = 0)) and ([Frame.Color] = 2))) or ((true and ([Frame.ItemId] = 0)) and ([Frame.Color] = 4))) or ((((true and ([Frame.ItemId] = 0)) and ([Frame.Color] = 10)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Color] = 0))) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Color] = 2)))) or (((((true and ([Frame.ItemId] = 1)) and ([Frame.Color] = 5)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Color] = 11))) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Color] = 7))) or ((((true and ([Frame.ItemId] = 2)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 3)) and ([Frame.Color] = 7))) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Color] = 9))))) or ((((((true and ([Frame.ItemId] = 4)) and ([Frame.Color] = 10)) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Color] = 11))) or ((true and ([Frame.ItemId] = 5)) and ([Frame.Color] = 10))) or ((((true and ([Frame.ItemId] = 5)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Color] = 5))) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Color] = 9)))) or (((((true and ([Frame.ItemId] = 6)) and ([Frame.Color] = 10)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Color] = 11))) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Color] = 10))) or (((true and ([Frame.ItemId] = 8)) and ([Frame.Color] = 0)) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Color] = 2)))))) or (((((((true and ([Frame.ItemId] = 8)) and ([Frame.Color] = 3)) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Color] = 7))) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Color] = 9))) or ((((true and ([Frame.ItemId] = 8)) and ([Frame.Color] = 10)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Color] = 0))) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Color] = 7)))) or (((((true and ([Frame.ItemId] = 9)) and ([Frame.Color] = 9)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Color] = 10))) or ((true and ([Frame.ItemId] = 10)) and ([Frame.Color] = 0))) or (((true and ([Frame.ItemId] = 10)) and ([Frame.Color] = 2)) or ((true and ([Frame.ItemId] = 10)) and ([Frame.Color] = 3))))) or ((((((true and ([Frame.ItemId] = 10)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Color] = 0))) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Color] = 10))) or ((((true and ([Frame.ItemId] = 11)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Color] = 5))) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Color] = 9)))) or (((((true and ([Frame.ItemId] = 12)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 13)) and ([Frame.Color] = 9))) or ((true and ([Frame.ItemId] = 13)) and ([Frame.Color] = 10))) or (((true and ([Frame.ItemId] = 13)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Color] = 2))))))) or ((((((((true and ([Frame.ItemId] = 14)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Color] = 2))) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Color] = 5))) or ((((true and ([Frame.ItemId] = 15)) and ([Frame.Color] = 9)) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Color] = 10))) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Color] = 11)))) or (((((true and ([Frame.ItemId] = 16)) and ([Frame.Color] = 2)) or ((true and ([Frame.ItemId] = 16)) and ([Frame.Color] = 11))) or ((true and ([Frame.ItemId] = 17)) and ([Frame.Color] = 10))) or ((((true and ([Frame.ItemId] = 18)) and ([Frame.Color] = 5)) or ((true and ([Frame.ItemId] = 18)) and ([Frame.Color] = 8))) or ((true and ([Frame.ItemId] = 19)) and ([Frame.Color] = 8))))) or ((((((true and ([Frame.ItemId] = 19)) and ([Frame.Color] = 10)) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Color] = 5))) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Color] = 7))) or ((((true and ([Frame.ItemId] = 21)) and ([Frame.Color] = 5)) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Color] = 9))) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Color] = 11)))) or (((((true and ([Frame.ItemId] = 22)) and ([Frame.Color] = 2)) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Color] = 9))) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Color] = 11))) or (((true and ([Frame.ItemId] = 23)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 24)) and ([Frame.Color] = 7)))))) or (((((((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 0)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 2))) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 5))) or ((((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 6)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 7))) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 10)))) or (((((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 12))) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Color] = 13))) or (((true and ([Frame.ItemId] = 26)) and ([Frame.Color] = 0)) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Color] = 1))))) or ((((((true and ([Frame.ItemId] = 28)) and ([Frame.Color] = 0)) or ((true and ([Frame.ItemId] = 28)) and ([Frame.Color] = 12))) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Color] = 11))) or ((((true and ([Frame.ItemId] = 30)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Color] = 11))) or ((true and ([Frame.ItemId] = 32)) and ([Frame.Color] = 7)))) or (((((true and ([Frame.ItemId] = 32)) and ([Frame.Color] = 11)) or ((true and ([Frame.ItemId] = 33)) and ([Frame.Color] = 11))) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Color] = 5))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Color] = 10)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Color] = 11)))))))"
+    },
+    {
+      "id": "Rule21",
+      "description": "Rule at line 603",
+      "expr": "(((((((true and ([Frame.ItemId] = 0)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Comfort] = 1))) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Comfort] = 1))) or (((true and ([Frame.ItemId] = 3)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Comfort] = 1)))) or (((((true and ([Frame.ItemId] = 5)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Comfort] = 1))) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Comfort] = 2))) or (((true and ([Frame.ItemId] = 8)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Comfort] = 1))))) or ((((((true and ([Frame.ItemId] = 10)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Comfort] = 1))) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Comfort] = 1))) or (((true and ([Frame.ItemId] = 13)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Comfort] = 0)))) or ((((true and ([Frame.ItemId] = 15)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 16)) and ([Frame.Comfort] = 1))) or (((true and ([Frame.ItemId] = 17)) and ([Frame.Comfort] = 0)) or ((true and ([Frame.ItemId] = 18)) and ([Frame.Comfort] = 0)))))) or (((((((true and ([Frame.ItemId] = 19)) and ([Frame.Comfort] = 0)) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Comfort] = 0))) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Comfort] = 1))) or (((true and ([Frame.ItemId] = 22)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 23)) and ([Frame.Comfort] = 1)))) or ((((true and ([Frame.ItemId] = 24)) and ([Frame.Comfort] = 0)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Comfort] = 2))) or (((true and ([Frame.ItemId] = 26)) and ([Frame.Comfort] = 0)) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Comfort] = 0))))) or ((((((true and ([Frame.ItemId] = 28)) and ([Frame.Comfort] = 0)) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Comfort] = 2))) or ((true and ([Frame.ItemId] = 30)) and ([Frame.Comfort] = 2))) or (((true and ([Frame.ItemId] = 31)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 32)) and ([Frame.Comfort] = 1)))) or ((((true and ([Frame.ItemId] = 33)) and ([Frame.Comfort] = 1)) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Comfort] = 1))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Comfort] = 2)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Comfort] = 2))))))"
+    },
+    {
+      "id": "Rule22",
+      "description": "Rule at line 643",
+      "expr": "(((((((true and ([Frame.ItemId] = 0)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Geartype] = 1))) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 3)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Geartype] = 1)))) or (((((true and ([Frame.ItemId] = 5)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Geartype] = 1))) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 8)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Geartype] = 1))))) or ((((((true and ([Frame.ItemId] = 10)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Geartype] = 1))) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 13)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Geartype] = 1)))) or ((((true and ([Frame.ItemId] = 15)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 16)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 17)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 18)) and ([Frame.Geartype] = 0)))))) or (((((((true and ([Frame.ItemId] = 19)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Geartype] = 0))) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 22)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 23)) and ([Frame.Geartype] = 0)))) or ((((true and ([Frame.ItemId] = 24)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 26)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Geartype] = 0))))) or ((((((true and ([Frame.ItemId] = 28)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Geartype] = 1))) or ((true and ([Frame.ItemId] = 30)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 31)) and ([Frame.Geartype] = 1)) or ((true and ([Frame.ItemId] = 32)) and ([Frame.Geartype] = 1)))) or ((((true and ([Frame.ItemId] = 33)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Geartype] = 1))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Geartype] = 0)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Geartype] = 0))))))"
+    },
+    {
+      "id": "Rule23",
+      "description": "Rule at line 689",
+      "expr": "(((((((true and ([Frame.ItemId] = 0)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Gender] = 1))) or ((((true and ([Frame.ItemId] = 3)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 5)) and ([Frame.Gender] = 0)))) or (((((true and ([Frame.ItemId] = 6)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Gender] = 0))) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Gender] = 0))) or (((true and ([Frame.ItemId] = 8)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Gender] = 0))))) or ((((((true and ([Frame.ItemId] = 10)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Gender] = 0))) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Gender] = 1))) or ((((true and ([Frame.ItemId] = 13)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Gender] = 1)))) or (((((true and ([Frame.ItemId] = 16)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 17)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 18)) and ([Frame.Gender] = 1))) or (((true and ([Frame.ItemId] = 19)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Gender] = 1)))))) or (((((((true and ([Frame.ItemId] = 21)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 23)) and ([Frame.Gender] = 0))) or ((((true and ([Frame.ItemId] = 24)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 26)) and ([Frame.Gender] = 1)))) or (((((true and ([Frame.ItemId] = 27)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 28)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Gender] = 0))) or (((true and ([Frame.ItemId] = 29)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 30)) and ([Frame.Gender] = 0))))) or ((((((true and ([Frame.ItemId] = 30)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Gender] = 0))) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Gender] = 1))) or (((true and ([Frame.ItemId] = 32)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 32)) and ([Frame.Gender] = 1)))) or (((((true and ([Frame.ItemId] = 33)) and ([Frame.Gender] = 0)) or ((true and ([Frame.ItemId] = 33)) and ([Frame.Gender] = 1))) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Gender] = 1))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Gender] = 1)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Gender] = 1))))))"
+    },
+    {
+      "id": "Rule24",
+      "description": "Rule at line 850",
+      "expr": "(((((((((true and ([Frame.ItemId] = 0)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 0)) and ([Frame.Size] = 8))) or ((true and ([Frame.ItemId] = 0)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 0)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Size] = 9)))) or (((((true and ([Frame.ItemId] = 1)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 1)) and ([Frame.Size] = 12))) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 2)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 2)) and ([Frame.Size] = 12))))) or ((((((true and ([Frame.ItemId] = 3)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 3)) and ([Frame.Size] = 9))) or ((true and ([Frame.ItemId] = 3)) and ([Frame.Size] = 10))) or (((true and ([Frame.ItemId] = 4)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 4)) and ([Frame.Size] = 10)))) or (((((true and ([Frame.ItemId] = 4)) and ([Frame.Size] = 12)) or ((true and ([Frame.ItemId] = 5)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 5)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 5)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Size] = 7)))))) or (((((((true and ([Frame.ItemId] = 6)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 6)) and ([Frame.Size] = 10))) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Size] = 7))) or (((true and ([Frame.ItemId] = 7)) and ([Frame.Size] = 8)) or ((true and ([Frame.ItemId] = 7)) and ([Frame.Size] = 9)))) or (((((true and ([Frame.ItemId] = 7)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Size] = 4))) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Size] = 6))) or (((true and ([Frame.ItemId] = 8)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Size] = 9))))) or ((((((true and ([Frame.ItemId] = 8)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 8)) and ([Frame.Size] = 12))) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Size] = 7))) or (((true and ([Frame.ItemId] = 9)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 9)) and ([Frame.Size] = 10)))) or (((((true and ([Frame.ItemId] = 10)) and ([Frame.Size] = 2)) or ((true and ([Frame.ItemId] = 10)) and ([Frame.Size] = 4))) or ((true and ([Frame.ItemId] = 10)) and ([Frame.Size] = 6))) or (((true and ([Frame.ItemId] = 10)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 10)) and ([Frame.Size] = 9))))))) or ((((((((true and ([Frame.ItemId] = 11)) and ([Frame.Size] = 2)) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Size] = 4))) or ((true and ([Frame.ItemId] = 11)) and ([Frame.Size] = 6))) or (((true and ([Frame.ItemId] = 11)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Size] = 9)))) or (((((true and ([Frame.ItemId] = 12)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 12)) and ([Frame.Size] = 12))) or ((true and ([Frame.ItemId] = 13)) and ([Frame.Size] = 7))) or (((true and ([Frame.ItemId] = 13)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 13)) and ([Frame.Size] = 10))))) or ((((((true and ([Frame.ItemId] = 14)) and ([Frame.Size] = 2)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Size] = 4))) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Size] = 6))) or (((true and ([Frame.ItemId] = 14)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 14)) and ([Frame.Size] = 9)))) or (((((true and ([Frame.ItemId] = 15)) and ([Frame.Size] = 6)) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 15)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 15)) and ([Frame.Size] = 12)))))) or (((((((true and ([Frame.ItemId] = 16)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 16)) and ([Frame.Size] = 9))) or ((true and ([Frame.ItemId] = 16)) and ([Frame.Size] = 10))) or (((true and ([Frame.ItemId] = 17)) and ([Frame.Size] = 2)) or ((true and ([Frame.ItemId] = 17)) and ([Frame.Size] = 4)))) or (((((true and ([Frame.ItemId] = 17)) and ([Frame.Size] = 6)) or ((true and ([Frame.ItemId] = 17)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 17)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 18)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 18)) and ([Frame.Size] = 10))))) or ((((((true and ([Frame.ItemId] = 18)) and ([Frame.Size] = 11)) or ((true and ([Frame.ItemId] = 18)) and ([Frame.Size] = 12))) or ((true and ([Frame.ItemId] = 19)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 19)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 19)) and ([Frame.Size] = 11)))) or ((((true and ([Frame.ItemId] = 19)) and ([Frame.Size] = 12)) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 20)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 20)) and ([Frame.Size] = 11)))))))) or (((((((((true and ([Frame.ItemId] = 20)) and ([Frame.Size] = 12)) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Size] = 2))) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Size] = 4))) or (((true and ([Frame.ItemId] = 21)) and ([Frame.Size] = 6)) or ((true and ([Frame.ItemId] = 21)) and ([Frame.Size] = 7)))) or (((((true and ([Frame.ItemId] = 21)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Size] = 9))) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Size] = 10))) or (((true and ([Frame.ItemId] = 22)) and ([Frame.Size] = 11)) or ((true and ([Frame.ItemId] = 22)) and ([Frame.Size] = 12))))) or ((((((true and ([Frame.ItemId] = 23)) and ([Frame.Size] = 6)) or ((true and ([Frame.ItemId] = 23)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 23)) and ([Frame.Size] = 8))) or (((true and ([Frame.ItemId] = 23)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 24)) and ([Frame.Size] = 9)))) or (((((true and ([Frame.ItemId] = 24)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 24)) and ([Frame.Size] = 11))) or ((true and ([Frame.ItemId] = 24)) and ([Frame.Size] = 12))) or (((true and ([Frame.ItemId] = 25)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 25)) and ([Frame.Size] = 9)))))) or (((((((true and ([Frame.ItemId] = 25)) and ([Frame.Size] = 11)) or ((true and ([Frame.ItemId] = 26)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 26)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 26)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 26)) and ([Frame.Size] = 12)))) or (((((true and ([Frame.ItemId] = 26)) and ([Frame.Size] = 13)) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 27)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 27)) and ([Frame.Size] = 12))))) or ((((((true and ([Frame.ItemId] = 27)) and ([Frame.Size] = 13)) or ((true and ([Frame.ItemId] = 28)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 28)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 28)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 28)) and ([Frame.Size] = 12)))) or (((((true and ([Frame.ItemId] = 28)) and ([Frame.Size] = 13)) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Size] = 2))) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Size] = 4))) or (((true and ([Frame.ItemId] = 29)) and ([Frame.Size] = 6)) or ((true and ([Frame.ItemId] = 29)) and ([Frame.Size] = 8))))))) or ((((((((true and ([Frame.ItemId] = 30)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 30)) and ([Frame.Size] = 8))) or ((true and ([Frame.ItemId] = 30)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 30)) and ([Frame.Size] = 11)) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Size] = 7)))) or (((((true and ([Frame.ItemId] = 31)) and ([Frame.Size] = 8)) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Size] = 9))) or ((true and ([Frame.ItemId] = 31)) and ([Frame.Size] = 11))) or (((true and ([Frame.ItemId] = 32)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 32)) and ([Frame.Size] = 10))))) or ((((((true and ([Frame.ItemId] = 32)) and ([Frame.Size] = 11)) or ((true and ([Frame.ItemId] = 33)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 33)) and ([Frame.Size] = 9))) or (((true and ([Frame.ItemId] = 33)) and ([Frame.Size] = 10)) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Size] = 3)))) or (((((true and ([Frame.ItemId] = 34)) and ([Frame.Size] = 5)) or ((true and ([Frame.ItemId] = 34)) and ([Frame.Size] = 7))) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 0))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 1)) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 2)))))) or (((((((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 3)) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 4))) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 5))) or (((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 6)) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 7)))) or (((((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 8)) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 9))) or ((true and ([Frame.ItemId] = 35)) and ([Frame.Size] = 10))) or (((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 0)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 1))))) or ((((((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 2)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 3))) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 4))) or (((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 5)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 6)))) or ((((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 7)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 8))) or (((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 9)) or ((true and ([Frame.ItemId] = 36)) and ([Frame.Size] = 10))))))))"
+    },
+    {
+      "id": "Rule25",
+      "description": "Rule at line 870",
+      "expr": "((((((true and ([Gear.ItemId] = 0)) and ([Gear.Frametype] = 2)) or ((true and ([Gear.ItemId] = 1)) and ([Gear.Frametype] = 3))) or ((true and ([Gear.ItemId] = 2)) and ([Gear.Frametype] = 3))) or (((true and ([Gear.ItemId] = 3)) and ([Gear.Frametype] = 3)) or ((true and ([Gear.ItemId] = 4)) and ([Gear.Frametype] = 3)))) or ((((true and ([Gear.ItemId] = 5)) and ([Gear.Frametype] = 2)) or ((true and ([Gear.ItemId] = 6)) and ([Gear.Frametype] = 2))) or (((true and ([Gear.ItemId] = 7)) and ([Gear.Frametype] = 3)) or ((true and ([Gear.ItemId] = 8)) and ([Gear.Frametype] = 0))))) or (((((true and ([Gear.ItemId] = 8)) and ([Gear.Frametype] = 1)) or ((true and ([Gear.ItemId] = 8)) and ([Gear.Frametype] = 2))) or (((true and ([Gear.ItemId] = 9)) and ([Gear.Frametype] = 3)) or ((true and ([Gear.ItemId] = 10)) and ([Gear.Frametype] = 2)))) or ((((true and ([Gear.ItemId] = 11)) and ([Gear.Frametype] = 3)) or ((true and ([Gear.ItemId] = 12)) and ([Gear.Frametype] = 0))) or (((true and ([Gear.ItemId] = 12)) and ([Gear.Frametype] = 1)) or ((true and ([Gear.ItemId] = 13)) and ([Gear.Frametype] = 3)))))"
+    },
+    {
+      "id": "Rule26",
+      "description": "Rule at line 887",
+      "expr": "(((((true and ([Gear.ItemId] = 0)) and ([Gear.Geartype] = 0)) or ((true and ([Gear.ItemId] = 1)) and ([Gear.Geartype] = 0))) or (((true and ([Gear.ItemId] = 2)) and ([Gear.Geartype] = 0)) or ((true and ([Gear.ItemId] = 3)) and ([Gear.Geartype] = 0)))) or ((((true and ([Gear.ItemId] = 4)) and ([Gear.Geartype] = 0)) or ((true and ([Gear.ItemId] = 5)) and ([Gear.Geartype] = 0))) or ((true and ([Gear.ItemId] = 6)) and ([Gear.Geartype] = 0)))) or (((((true and ([Gear.ItemId] = 7)) and ([Gear.Geartype] = 0)) or ((true and ([Gear.ItemId] = 8)) and ([Gear.Geartype] = 1))) or (((true and ([Gear.ItemId] = 9)) and ([Gear.Geartype] = 0)) or ((true and ([Gear.ItemId] = 10)) and ([Gear.Geartype] = 0)))) or ((((true and ([Gear.ItemId] = 11)) and ([Gear.Geartype] = 0)) or ((true and ([Gear.ItemId] = 12)) and ([Gear.Geartype] = 1))) or ((true and ([Gear.ItemId] = 13)) and ([Gear.Geartype] = 0))))"
+    },
+    {
+      "id": "Rule27",
+      "description": "Rule at line 907",
+      "expr": "((((((true and ([Gear.ItemId] = 0)) and ([Gear.Speeds] = 7)) or ((true and ([Gear.ItemId] = 1)) and ([Gear.Speeds] = 4))) or ((true and ([Gear.ItemId] = 2)) and ([Gear.Speeds] = 5))) or (((true and ([Gear.ItemId] = 3)) and ([Gear.Speeds] = 5)) or ((true and ([Gear.ItemId] = 4)) and ([Gear.Speeds] = 5)))) or ((((true and ([Gear.ItemId] = 5)) and ([Gear.Speeds] = 7)) or ((true and ([Gear.ItemId] = 6)) and ([Gear.Speeds] = 8))) or (((true and ([Gear.ItemId] = 7)) and ([Gear.Speeds] = 5)) or ((true and ([Gear.ItemId] = 8)) and ([Gear.Speeds] = 0))))) or (((((true and ([Gear.ItemId] = 8)) and ([Gear.Speeds] = 1)) or ((true and ([Gear.ItemId] = 8)) and ([Gear.Speeds] = 3))) or (((true and ([Gear.ItemId] = 9)) and ([Gear.Speeds] = 4)) or ((true and ([Gear.ItemId] = 10)) and ([Gear.Speeds] = 6)))) or ((((true and ([Gear.ItemId] = 11)) and ([Gear.Speeds] = 4)) or ((true and ([Gear.ItemId] = 12)) and ([Gear.Speeds] = 0))) or (((true and ([Gear.ItemId] = 12)) and ([Gear.Speeds] = 2)) or ((true and ([Gear.ItemId] = 13)) and ([Gear.Speeds] = 4)))))"
+    },
+    {
+      "id": "Rule28",
+      "description": "Rule at line 919",
+      "expr": "(((((true and ([Pedal.ItemId] = 0)) and ([Pedal.Pedaltype] = 2)) or ((true and ([Pedal.ItemId] = 1)) and ([Pedal.Pedaltype] = 1))) or ((true and ([Pedal.ItemId] = 2)) and ([Pedal.Pedaltype] = 1))) or (((true and ([Pedal.ItemId] = 3)) and ([Pedal.Pedaltype] = 1)) or ((true and ([Pedal.ItemId] = 4)) and ([Pedal.Pedaltype] = 1)))) or ((((true and ([Pedal.ItemId] = 5)) and ([Pedal.Pedaltype] = 2)) or ((true and ([Pedal.ItemId] = 6)) and ([Pedal.Pedaltype] = 2))) or (((true and ([Pedal.ItemId] = 7)) and ([Pedal.Pedaltype] = 0)) or ((true and ([Pedal.ItemId] = 8)) and ([Pedal.Pedaltype] = 0))))"
+    },
+    {
+      "id": "Rule29",
+      "description": "Rule at line 928",
+      "expr": "((((true and ([Pedal.Frametype] = 0)) and ([Pedal.Pedaltype] = 2)) or ((true and ([Pedal.Frametype] = 1)) and ([Pedal.Pedaltype] = 2))) or ((true and ([Pedal.Frametype] = 3)) and ([Pedal.Pedaltype] = 1))) or ((((true and ([Pedal.Frametype] = 3)) and ([Pedal.Pedaltype] = 0)) or ((true and ([Pedal.Frametype] = 2)) and ([Pedal.Pedaltype] = 1))) or ((true and ([Pedal.Frametype] = 2)) and ([Pedal.Pedaltype] = 0)))"
+    },
+    {
+      "id": "Rule30",
+      "description": "Rule at line 943",
+      "expr": "(((((true and ([Rim.ItemId] = 0)) and ([Rim.Diameter] = 1)) or ((true and ([Rim.ItemId] = 1)) and ([Rim.Diameter] = 1))) or ((true and ([Rim.ItemId] = 2)) and ([Rim.Diameter] = 1))) or ((((true and ([Rim.ItemId] = 3)) and ([Rim.Diameter] = 1)) or ((true and ([Rim.ItemId] = 4)) and ([Rim.Diameter] = 1))) or ((true and ([Rim.ItemId] = 5)) and ([Rim.Diameter] = 0)))) or (((((true and ([Rim.ItemId] = 6)) and ([Rim.Diameter] = 2)) or ((true and ([Rim.ItemId] = 7)) and ([Rim.Diameter] = 0))) or ((true and ([Rim.ItemId] = 8)) and ([Rim.Diameter] = 2))) or ((((true and ([Rim.ItemId] = 9)) and ([Rim.Diameter] = 2)) or ((true and ([Rim.ItemId] = 10)) and ([Rim.Diameter] = 2))) or ((true and ([Rim.ItemId] = 11)) and ([Rim.Diameter] = 1))))"
+    },
+    {
+      "id": "Rule31",
+      "description": "Rule at line 958",
+      "expr": "(((((true and ([Rim.ItemId] = 0)) and ([Rim.Material] = 2)) or ((true and ([Rim.ItemId] = 1)) and ([Rim.Material] = 1))) or ((true and ([Rim.ItemId] = 2)) and ([Rim.Material] = 2))) or ((((true and ([Rim.ItemId] = 3)) and ([Rim.Material] = 1)) or ((true and ([Rim.ItemId] = 4)) and ([Rim.Material] = 1))) or ((true and ([Rim.ItemId] = 5)) and ([Rim.Material] = 4)))) or (((((true and ([Rim.ItemId] = 6)) and ([Rim.Material] = 2)) or ((true and ([Rim.ItemId] = 7)) and ([Rim.Material] = 4))) or ((true and ([Rim.ItemId] = 8)) and ([Rim.Material] = 3))) or ((((true and ([Rim.ItemId] = 9)) and ([Rim.Material] = 2)) or ((true and ([Rim.ItemId] = 10)) and ([Rim.Material] = 2))) or ((true and ([Rim.ItemId] = 11)) and ([Rim.Material] = 0))))"
+    },
+    {
+      "id": "Rule32",
+      "description": "Rule at line 973",
+      "expr": "(((((true and ([Rim.ItemId] = 0)) and ([Rim.Width] = 1)) or ((true and ([Rim.ItemId] = 1)) and ([Rim.Width] = 1))) or ((true and ([Rim.ItemId] = 2)) and ([Rim.Width] = 0))) or ((((true and ([Rim.ItemId] = 3)) and ([Rim.Width] = 0)) or ((true and ([Rim.ItemId] = 4)) and ([Rim.Width] = 2))) or ((true and ([Rim.ItemId] = 5)) and ([Rim.Width] = 3)))) or (((((true and ([Rim.ItemId] = 6)) and ([Rim.Width] = 2)) or ((true and ([Rim.ItemId] = 7)) and ([Rim.Width] = 2))) or ((true and ([Rim.ItemId] = 8)) and ([Rim.Width] = 0))) or ((((true and ([Rim.ItemId] = 9)) and ([Rim.Width] = 1)) or ((true and ([Rim.ItemId] = 10)) and ([Rim.Width] = 1))) or ((true and ([Rim.ItemId] = 11)) and ([Rim.Width] = 3))))"
+    },
+    {
+      "id": "Rule33",
+      "description": "Rule at line 980",
+      "expr": "((((true and ([Rim.Diameter] = 0)) and ([Rim.SizeMin] = 2)) and ([Rim.SizeMax] = 9)) or (((true and ([Rim.Diameter] = 1)) and ([Rim.SizeMin] = 4)) and ([Rim.SizeMax] = 13))) or (((true and ([Rim.Diameter] = 2)) and ([Rim.SizeMin] = 6)) and ([Rim.SizeMax] = 13))"
+    },
+    {
+      "id": "Rule34",
+      "description": "Rule at line 999",
+      "expr": "(((((true and ([Tire.ItemId] = 0)) and ([Tire.Drygrip] = 1)) or ((true and ([Tire.ItemId] = 1)) and ([Tire.Drygrip] = 0))) or (((true and ([Tire.ItemId] = 2)) and ([Tire.Drygrip] = 2)) or ((true and ([Tire.ItemId] = 3)) and ([Tire.Drygrip] = 1)))) or ((((true and ([Tire.ItemId] = 4)) and ([Tire.Drygrip] = 2)) or ((true and ([Tire.ItemId] = 5)) and ([Tire.Drygrip] = 2))) or (((true and ([Tire.ItemId] = 6)) and ([Tire.Drygrip] = 0)) or ((true and ([Tire.ItemId] = 7)) and ([Tire.Drygrip] = 2))))) or (((((true and ([Tire.ItemId] = 8)) and ([Tire.Drygrip] = 2)) or ((true and ([Tire.ItemId] = 9)) and ([Tire.Drygrip] = 1))) or (((true and ([Tire.ItemId] = 10)) and ([Tire.Drygrip] = 2)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Drygrip] = 1)))) or ((((true and ([Tire.ItemId] = 12)) and ([Tire.Drygrip] = 1)) or ((true and ([Tire.ItemId] = 13)) and ([Tire.Drygrip] = 1))) or (((true and ([Tire.ItemId] = 14)) and ([Tire.Drygrip] = 1)) or ((true and ([Tire.ItemId] = 15)) and ([Tire.Drygrip] = 1)))))"
+    },
+    {
+      "id": "Rule35",
+      "description": "Rule at line 1022",
+      "expr": "((((((true and ([Tire.ItemId] = 0)) and ([Tire.Diameter] = 2)) or ((true and ([Tire.ItemId] = 1)) and ([Tire.Diameter] = 2))) or ((true and ([Tire.ItemId] = 2)) and ([Tire.Diameter] = 1))) or (((true and ([Tire.ItemId] = 3)) and ([Tire.Diameter] = 2)) or ((true and ([Tire.ItemId] = 4)) and ([Tire.Diameter] = 2)))) or (((((true and ([Tire.ItemId] = 5)) and ([Tire.Diameter] = 0)) or ((true and ([Tire.ItemId] = 6)) and ([Tire.Diameter] = 2))) or ((true and ([Tire.ItemId] = 7)) and ([Tire.Diameter] = 1))) or (((true and ([Tire.ItemId] = 8)) and ([Tire.Diameter] = 1)) or ((true and ([Tire.ItemId] = 8)) and ([Tire.Diameter] = 2))))) or ((((((true and ([Tire.ItemId] = 9)) and ([Tire.Diameter] = 1)) or ((true and ([Tire.ItemId] = 9)) and ([Tire.Diameter] = 2))) or ((true and ([Tire.ItemId] = 10)) and ([Tire.Diameter] = 1))) or (((true and ([Tire.ItemId] = 10)) and ([Tire.Diameter] = 2)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Diameter] = 1)))) or (((((true and ([Tire.ItemId] = 11)) and ([Tire.Diameter] = 2)) or ((true and ([Tire.ItemId] = 12)) and ([Tire.Diameter] = 2))) or ((true and ([Tire.ItemId] = 13)) and ([Tire.Diameter] = 2))) or (((true and ([Tire.ItemId] = 14)) and ([Tire.Diameter] = 2)) or ((true and ([Tire.ItemId] = 15)) and ([Tire.Diameter] = 1)))))"
+    },
+    {
+      "id": "Rule36",
+      "description": "Rule at line 1056",
+      "expr": "((((((true and ([Tire.ItemId] = 0)) and ([Tire.Profile] = 1)) or ((true and ([Tire.ItemId] = 0)) and ([Tire.Profile] = 3))) or (((true and ([Tire.ItemId] = 1)) and ([Tire.Profile] = 1)) or ((true and ([Tire.ItemId] = 1)) and ([Tire.Profile] = 2)))) or ((((true and ([Tire.ItemId] = 2)) and ([Tire.Profile] = 1)) or ((true and ([Tire.ItemId] = 3)) and ([Tire.Profile] = 4))) or (((true and ([Tire.ItemId] = 3)) and ([Tire.Profile] = 8)) or ((true and ([Tire.ItemId] = 4)) and ([Tire.Profile] = 2))))) or (((((true and ([Tire.ItemId] = 5)) and ([Tire.Profile] = 9)) or ((true and ([Tire.ItemId] = 6)) and ([Tire.Profile] = 9))) or (((true and ([Tire.ItemId] = 6)) and ([Tire.Profile] = 10)) or ((true and ([Tire.ItemId] = 7)) and ([Tire.Profile] = 1)))) or ((((true and ([Tire.ItemId] = 8)) and ([Tire.Profile] = 1)) or ((true and ([Tire.ItemId] = 8)) and ([Tire.Profile] = 3))) or (((true and ([Tire.ItemId] = 9)) and ([Tire.Profile] = 3)) or ((true and ([Tire.ItemId] = 9)) and ([Tire.Profile] = 5)))))) or ((((((true and ([Tire.ItemId] = 10)) and ([Tire.Profile] = 0)) or ((true and ([Tire.ItemId] = 10)) and ([Tire.Profile] = 1))) or (((true and ([Tire.ItemId] = 11)) and ([Tire.Profile] = 3)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Profile] = 4)))) or ((((true and ([Tire.ItemId] = 11)) and ([Tire.Profile] = 5)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Profile] = 6))) or (((true and ([Tire.ItemId] = 11)) and ([Tire.Profile] = 7)) or ((true and ([Tire.ItemId] = 12)) and ([Tire.Profile] = 0))))) or (((((true and ([Tire.ItemId] = 12)) and ([Tire.Profile] = 3)) or ((true and ([Tire.ItemId] = 12)) and ([Tire.Profile] = 5))) or (((true and ([Tire.ItemId] = 13)) and ([Tire.Profile] = 1)) or ((true and ([Tire.ItemId] = 13)) and ([Tire.Profile] = 4)))) or ((((true and ([Tire.ItemId] = 13)) and ([Tire.Profile] = 6)) or ((true and ([Tire.ItemId] = 14)) and ([Tire.Profile] = 3))) or ((true and ([Tire.ItemId] = 15)) and ([Tire.Profile] = 1)))))"
+    },
+    {
+      "id": "Rule37",
+      "description": "Rule at line 1075",
+      "expr": "(((((true and ([Tire.ItemId] = 0)) and ([Tire.Reflex] = 0)) or ((true and ([Tire.ItemId] = 1)) and ([Tire.Reflex] = 0))) or (((true and ([Tire.ItemId] = 2)) and ([Tire.Reflex] = 0)) or ((true and ([Tire.ItemId] = 3)) and ([Tire.Reflex] = 0)))) or ((((true and ([Tire.ItemId] = 4)) and ([Tire.Reflex] = 0)) or ((true and ([Tire.ItemId] = 5)) and ([Tire.Reflex] = 0))) or (((true and ([Tire.ItemId] = 6)) and ([Tire.Reflex] = 0)) or ((true and ([Tire.ItemId] = 7)) and ([Tire.Reflex] = 1))))) or (((((true and ([Tire.ItemId] = 8)) and ([Tire.Reflex] = 1)) or ((true and ([Tire.ItemId] = 9)) and ([Tire.Reflex] = 1))) or (((true and ([Tire.ItemId] = 10)) and ([Tire.Reflex] = 1)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Reflex] = 1)))) or ((((true and ([Tire.ItemId] = 12)) and ([Tire.Reflex] = 0)) or ((true and ([Tire.ItemId] = 13)) and ([Tire.Reflex] = 0))) or (((true and ([Tire.ItemId] = 14)) and ([Tire.Reflex] = 0)) or ((true and ([Tire.ItemId] = 15)) and ([Tire.Reflex] = 0)))))"
+    },
+    {
+      "id": "Rule38",
+      "description": "Rule at line 1094",
+      "expr": "(((((true and ([Tire.ItemId] = 0)) and ([Tire.Wetgrip] = 1)) or ((true and ([Tire.ItemId] = 1)) and ([Tire.Wetgrip] = 1))) or (((true and ([Tire.ItemId] = 2)) and ([Tire.Wetgrip] = 0)) or ((true and ([Tire.ItemId] = 3)) and ([Tire.Wetgrip] = 1)))) or ((((true and ([Tire.ItemId] = 4)) and ([Tire.Wetgrip] = 1)) or ((true and ([Tire.ItemId] = 5)) and ([Tire.Wetgrip] = 2))) or (((true and ([Tire.ItemId] = 6)) and ([Tire.Wetgrip] = 2)) or ((true and ([Tire.ItemId] = 7)) and ([Tire.Wetgrip] = 0))))) or (((((true and ([Tire.ItemId] = 8)) and ([Tire.Wetgrip] = 2)) or ((true and ([Tire.ItemId] = 9)) and ([Tire.Wetgrip] = 1))) or (((true and ([Tire.ItemId] = 10)) and ([Tire.Wetgrip] = 2)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Wetgrip] = 1)))) or ((((true and ([Tire.ItemId] = 12)) and ([Tire.Wetgrip] = 1)) or ((true and ([Tire.ItemId] = 13)) and ([Tire.Wetgrip] = 1))) or (((true and ([Tire.ItemId] = 14)) and ([Tire.Wetgrip] = 2)) or ((true and ([Tire.ItemId] = 15)) and ([Tire.Wetgrip] = 1)))))"
+    },
+    {
+      "id": "Rule39",
+      "description": "Rule at line 1124",
+      "expr": "((((((true and ([Tire.ItemId] = 0)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 1)) and ([Tire.Width] = 1))) or (((true and ([Tire.ItemId] = 2)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 2)) and ([Tire.Width] = 3)))) or ((((true and ([Tire.ItemId] = 3)) and ([Tire.Width] = 0)) or ((true and ([Tire.ItemId] = 3)) and ([Tire.Width] = 2))) or ((true and ([Tire.ItemId] = 4)) and ([Tire.Width] = 1)))) or (((((true and ([Tire.ItemId] = 5)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 5)) and ([Tire.Width] = 3))) or (((true and ([Tire.ItemId] = 6)) and ([Tire.Width] = 3)) or ((true and ([Tire.ItemId] = 6)) and ([Tire.Width] = 4)))) or ((((true and ([Tire.ItemId] = 7)) and ([Tire.Width] = 1)) or ((true and ([Tire.ItemId] = 7)) and ([Tire.Width] = 2))) or ((true and ([Tire.ItemId] = 8)) and ([Tire.Width] = 1))))) or ((((((true and ([Tire.ItemId] = 8)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 9)) and ([Tire.Width] = 1))) or (((true and ([Tire.ItemId] = 9)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 10)) and ([Tire.Width] = 0)))) or ((((true and ([Tire.ItemId] = 10)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Width] = 1))) or ((true and ([Tire.ItemId] = 11)) and ([Tire.Width] = 2)))) or (((((true and ([Tire.ItemId] = 12)) and ([Tire.Width] = 0)) or ((true and ([Tire.ItemId] = 12)) and ([Tire.Width] = 1))) or ((true and ([Tire.ItemId] = 13)) and ([Tire.Width] = 1))) or ((((true and ([Tire.ItemId] = 13)) and ([Tire.Width] = 2)) or ((true and ([Tire.ItemId] = 14)) and ([Tire.Width] = 0))) or ((true and ([Tire.ItemId] = 15)) and ([Tire.Width] = 1)))))"
+    },
+    {
+      "id": "Rule40",
+      "description": "Rule at line 1133",
+      "expr": "((((true and ([Tire.Frametype] = 3)) and ([Tire.ProfileMin] = 0)) and ([Tire.ProfileMax] = 6)) or (((true and ([Tire.Frametype] = 2)) and ([Tire.ProfileMin] = 7)) and ([Tire.ProfileMax] = 9))) or ((((true and ([Tire.Frametype] = 0)) and ([Tire.ProfileMin] = 3)) and ([Tire.ProfileMax] = 9)) or (((true and ([Tire.Frametype] = 1)) and ([Tire.ProfileMin] = 5)) and ([Tire.ProfileMax] = 9)))"
+    },
+    {
+      "id": "Rule41",
+      "description": "Rule at line 1140",
+      "expr": "(((true and ([Options_.Shoe.ItemId] = 0)) and ([Options_.Shoe.Pedaltype] = 0)) or ((true and ([Options_.Shoe.ItemId] = 1)) and ([Options_.Shoe.Pedaltype] = 1))) or (((true and ([Options_.Shoe.ItemId] = 2)) and ([Options_.Shoe.Pedaltype] = 0)) or ((true and ([Options_.Shoe.ItemId] = 3)) and ([Options_.Shoe.Pedaltype] = 1)))"
+    },
+    {
+      "id": "Rule42",
+      "description": "Rule at line 1149",
+      "expr": "((((true and ([Frame.Frametype] = 0)) and ([Options_.Basket.HaveBasket] = false)) or ((true and ([Frame.Frametype] = 2)) and ([Options_.Basket.HaveBasket] = false))) or (((true and ([Frame.Frametype] = 3)) and ([Options_.Basket.HaveBasket] = false)) or ((true and ([Frame.Frametype] = 0)) and ([Options_.Basket.HaveBasket] = true)))) or ((((true and ([Frame.Frametype] = 1)) and ([Options_.Basket.HaveBasket] = true)) or ((true and ([Frame.Frametype] = 2)) and ([Options_.Basket.HaveBasket] = false))) or ((true and ([Frame.Frametype] = 3)) and ([Options_.Basket.HaveBasket] = false)))"
+    },
+    {
+      "id": "Rule43",
+      "description": "Rule at line 1159",
+      "expr": "((((true and ([Frame.Frametype] = 0)) and ([Options_.Carrier.HaveCarrier] = false)) or ((true and ([Frame.Frametype] = 2)) and ([Options_.Carrier.HaveCarrier] = false))) or (((true and ([Frame.Frametype] = 3)) and ([Options_.Carrier.HaveCarrier] = false)) or ((true and ([Frame.Frametype] = 0)) and ([Options_.Carrier.HaveCarrier] = true)))) or ((((true and ([Frame.Frametype] = 1)) and ([Options_.Carrier.HaveCarrier] = true)) or ((true and ([Frame.Frametype] = 1)) and ([Options_.Carrier.HaveCarrier] = true))) or (((true and ([Frame.Frametype] = 2)) and ([Options_.Carrier.HaveCarrier] = false)) or ((true and ([Frame.Frametype] = 3)) and ([Options_.Carrier.HaveCarrier] = true))))"
+    },
+    {
+      "id": "Rule44",
+      "description": "Rule at line 1169",
+      "expr": "((((true and ([Frame.Frametype] = 0)) and ([Options_.Mudguard.HaveMudguard] = false)) or ((true and ([Frame.Frametype] = 2)) and ([Options_.Mudguard.HaveMudguard] = false))) or (((true and ([Frame.Frametype] = 3)) and ([Options_.Mudguard.HaveMudguard] = false)) or ((true and ([Frame.Frametype] = 0)) and ([Options_.Mudguard.HaveMudguard] = true)))) or ((((true and ([Frame.Frametype] = 1)) and ([Options_.Mudguard.HaveMudguard] = false)) or ((true and ([Frame.Frametype] = 1)) and ([Options_.Mudguard.HaveMudguard] = true))) or (((true and ([Frame.Frametype] = 2)) and ([Options_.Mudguard.HaveMudguard] = true)) or ((true and ([Frame.Frametype] = 3)) and ([Options_.Mudguard.HaveMudguard] = false))))"
+    },
+    {
+      "id": "Rule45",
+      "description": "Rule at line 1179",
+      "expr": "((((true and ([Frame.Frametype] = 0)) and ([Options_.Propstand.HavePropstand] = false)) or ((true and ([Frame.Frametype] = 2)) and ([Options_.Propstand.HavePropstand] = false))) or (((true and ([Frame.Frametype] = 3)) and ([Options_.Propstand.HavePropstand] = false)) or ((true and ([Frame.Frametype] = 0)) and ([Options_.Propstand.HavePropstand] = true)))) or ((((true and ([Frame.Frametype] = 1)) and ([Options_.Propstand.HavePropstand] = true)) or ((true and ([Frame.Frametype] = 1)) and ([Options_.Propstand.HavePropstand] = true))) or (((true and ([Frame.Frametype] = 2)) and ([Options_.Propstand.HavePropstand] = true)) or ((true and ([Frame.Frametype] = 3)) and ([Options_.Propstand.HavePropstand] = true))))"
+    },
+    {
+      "id": "Rule46",
+      "description": "Rule at line 1184",
+      "expr": "(((true and ([Frame.Geartype] = 0)) and ([Options_.Propstand.HavePropstand] = false)) or ((true and ([Frame.Geartype] = 1)) and ([Options_.Propstand.HavePropstand] = false))) or ((true and ([Frame.Geartype] = 1)) and ([Options_.Propstand.HavePropstand] = true))"
+    }
+  ]
+}

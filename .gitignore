@@ -1,0 +1,17 @@
+_ReSharper.*
+*.suo
+*.cache
+*.user
+*.bak
+*.orig
+*.pdb
+*~
+.vs/
+obj/
+bin
+TestResult.xml
+contrib/*
+packages/*
+packages-build/*
+npm-debug.log
+npm-debug.log.*

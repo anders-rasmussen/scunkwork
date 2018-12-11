@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Connection from './Connection'
 import Constants, { NodeStyle, OpenNodeStyle } from './Constants';
-import { node } from 'prop-types';
 
 export interface NodeData {
   values: number[],
@@ -15,49 +13,26 @@ interface NodeProps {
     domain: string[]
   }],
   node: NodeData,
-  varIdx: number
+  gridCol: number
 }
 
 /**
- * A node will in the grid. This is both root of tree and child nodes
+ * A node in a grid cell. This can both be the root,
+ * a normal node or a "any-value" node
  */
 export default class Node extends React.Component<NodeProps> {
 
-  keyForNode(node: NodeData): string {
-    return (this.props.varIdx + 1) + '_' + node.gridRow;
-  };
-
-  keyForConnection(node: NodeData): string {
-    return this.props.varIdx + 1 + '_' + node.gridRow;
-  };
-
   render() {
-    const cellCenterX = (this.props.varIdx + 1.5) * Constants.gridCellWidth;
+    const varIdx = this.props.gridCol - 1;
+    const cellCenterX = (this.props.gridCol + 0.5) * Constants.gridCellWidth;
     const cellCenterY = (this.props.node.gridRow + 0.5) * Constants.gridCellHeight;
     // String to display within node
-    const valuesString = this.props.varIdx < 0 ?
+    const valuesString = this.props.gridCol === 0 ?
       '' :
-      this.props.node.values.map((v) => this.props.variables[this.props.varIdx].domain[v]).join(',');
+      this.props.node.values.map((v) => this.props.variables[varIdx].domain[v]).join(',');
 
-    const childNodes = this.props.node.children.map((childNode, idx) =>
-      <Node
-        variables={this.props.variables}
-        node={childNode}
-        varIdx={this.props.varIdx + 1}
-        key={this.keyForNode(childNode)}
-      />);
-
-    const connections = this.props.node.children.map((childNode) =>
-      <Connection
-        parentCol={this.props.varIdx + 1}
-        parentRow={this.props.node.gridRow}
-        childCol={this.props.varIdx + 2}
-        childRow={childNode.gridRow}
-        key={this.keyForConnection(childNode)} />
-    );
-
-    const thisNode =
-      (this.props.varIdx < 0 || this.props.node.values.length === 0) ?
+    return (
+      (this.props.gridCol === 0 || this.props.node.values.length === 0) ?
         // Root and "all value" are rendered as simple circle
         <><circle cx={cellCenterX} cy={cellCenterY} {...OpenNodeStyle} /></> :
         // Normal nodes are rectangles with text
@@ -73,13 +48,7 @@ export default class Node extends React.Component<NodeProps> {
             dominantBaseline="central">
             {valuesString}
           </text>
-        </>;
-
-    return (
-      <>
-        {connections}
-        {thisNode}
-        {childNodes}
-      </>);
+        </>
+    );
   }
 }

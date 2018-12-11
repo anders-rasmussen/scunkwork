@@ -31,6 +31,11 @@ const ColumnHeaderStyle = {
   textDecoration: 'underline',
 }
 
+const MenuSettings = {
+  // Padding around a buton in a menu
+  menuButtonPadding: 5
+}
+
 // How to render odd variable columns
 const VarColumnStyleOdd = {
   fill: '#F2F2F2'
@@ -44,6 +49,7 @@ const VarColumnStyleEven = {
 // How to render connections between nodes
 const ConnectorStyle = {
   stroke: '#3F3F3F',
+  strokeWidth: 2
 }
 
 export default Constants;
@@ -53,5 +59,6 @@ export {
   ConnectorStyle,
   VarColumnStyleEven,
   VarColumnStyleOdd,
-  ColumnHeaderStyle
+  ColumnHeaderStyle,
+  MenuSettings
 }

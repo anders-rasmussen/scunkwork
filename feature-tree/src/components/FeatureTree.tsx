@@ -1,8 +1,10 @@
 import React from "react";
-import Node, { NodeData } from "./Node"
-import GridColumn from "./GridColumn"
+import { NodeData } from "./Node";
+import GridCell from './GridCell'
+import GridColumn from "./GridColumn";
 
-interface SolutionTreeProps {
+// Definition of a solution space
+interface SolutionTreeData {
   variables: [{
     id: string,
     domain: string[]
@@ -11,10 +13,21 @@ interface SolutionTreeProps {
   totalRows?: number
 }
 
+interface FeatureTreeState {
+  expandedTree: SolutionTreeData
+}
+
 /**
  * Visualization of a solution space as a feature tree
  */
-export default class SolutionTree extends React.Component<SolutionTreeProps> {
+export default class SolutionTree extends React.Component<SolutionTreeData, FeatureTreeState> {
+  constructor(props: SolutionTreeData) {
+    super(props);
+
+    this.state = {
+      expandedTree: this.expandTree(this.props.variables, this.props.root)
+    }
+  }
 
   // Expand a solution tree, such that each node contains
   // the grid row on which is to be entered
@@ -24,7 +37,7 @@ export default class SolutionTree extends React.Component<SolutionTreeProps> {
       domain: string[]
     }],
     root: NodeData,
-    totalRows?: number): SolutionTreeProps {
+    totalRows?: number): SolutionTreeData {
 
     function expandNode(node: NodeData, gridRow?: number): { expanded: NodeData, nextRow: number } {
       gridRow = gridRow || 0;
@@ -60,9 +73,32 @@ export default class SolutionTree extends React.Component<SolutionTreeProps> {
     };
   }
 
+  updateRoot(root?: NodeData) {
+    // // Root is undefined, if all nodes are deleted. Insert "TRUE"
+    if (!root) {
+      let node: NodeData | undefined = undefined, i = this.props.variables.length;
+      for (; i >= 0; i--) {
+        let children: NodeData[] = node === undefined ? [] : [node];
+        node = {
+          values: [],
+          children: children,
+          gridRow: 1
+        }
+      }
+
+      root = node;
+    }
+
+    // Root is updated, re-expand tree with new root
+    const expandedTree = this.expandTree(
+      this.state.expandedTree.variables,
+      root || this.props.root);
+
+    this.setState({ expandedTree: expandedTree });
+  }
+
   render() {
-    const expandedTree = this.expandTree(this.props.variables, this.props.root);
-    let { variables, root, totalRows } = expandedTree;
+    let { variables, root, totalRows } = this.state.expandedTree;
 
     let gridColumns = [], i = 0;
     for (i = 0; i < this.props.variables.length + 1; i++) {
@@ -76,7 +112,11 @@ export default class SolutionTree extends React.Component<SolutionTreeProps> {
     return (
       <svg width={window.innerWidth} height={window.innerHeight} >
         {gridColumns}
-        {<Node variables={variables} varIdx={-1} node={root} />}
+        {<GridCell
+          variables={variables}
+          gridCol={0}
+          node={root}
+          updateNodeFunc={root => this.updateRoot(root)} />}
       </svg >
     )
   }

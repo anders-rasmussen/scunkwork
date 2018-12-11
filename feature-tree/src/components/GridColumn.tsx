@@ -36,7 +36,8 @@ export default class GridColumn extends React.Component<GridColumnProps> {
             y={cellCenterY}
             textAnchor="middle"
             alignmentBaseline="central"
-            {...ColumnHeaderStyle}>
+            {...ColumnHeaderStyle}
+            cursor='move'>
             {this.props.variables[this.props.gridCol - 1].id}
           </text>
         }

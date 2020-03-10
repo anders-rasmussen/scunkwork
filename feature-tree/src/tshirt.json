@@ -1,0 +1,157 @@
+{
+  "variables": [
+    {
+      "id": "size",
+      "domain": [
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    {
+      "id": "color",
+      "domain": [
+        "red",
+        "white",
+        "black"
+      ]
+    },
+    {
+      "id": "print",
+      "domain": [
+        "mib",
+        "stw"
+      ]
+    }
+  ],
+  "root": {
+    "children": [
+      {
+        "values": [
+          0
+        ],
+        "children": [
+          {
+            "values": [
+              1
+            ],
+            "children": [
+              {
+                "values": []
+              },
+              {
+                "values": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              0
+            ],
+            "children": [
+              {
+                "values": [
+                  1
+                ]
+              },
+              {
+                "values": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "values": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              1,
+              2
+            ],
+            "children": [
+              {
+                "values": [
+                  0
+                ]
+              },
+              {
+                "values": [
+                  1
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "values": [
+          1
+        ],
+        "children": [
+          {
+            "values": [],
+            "children": [
+              {
+                "values": [
+                  1
+                ]
+              },
+              {
+                "values": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              0
+            ],
+            "children": [
+              {
+                "values": [
+                  1
+                ]
+              },
+              {
+                "values": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "values": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              1,
+              2
+            ],
+            "children": [
+              {
+                "values": [
+                  0
+                ]
+              },
+              {
+                "values": [
+                  1
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

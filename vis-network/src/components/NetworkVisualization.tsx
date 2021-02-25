@@ -1,15 +1,18 @@
 import React, { useEffect, useRef } from "react";
 
-import styled from "styled-components";
+import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import { Network } from "vis-network/standalone/esm/vis-network";
 
-import { NetworkControl } from "./NetworkControl";
-import { MenuBar } from "./MenuBar";
+import NetworkControl from "./NetworkControl";
 
-const StyledNetworkVisualization = styled.div`
-  height: calc(100% - 40px);
-  width: 100%;
-`;
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flex: 1,
+      overflow: "auto",
+    },
+  })
+);
 
 type NetworkVisualizationProps = {
   control: NetworkControl;
@@ -18,9 +21,9 @@ type NetworkVisualizationProps = {
 /**
  * Dependency graph showing all dependencies in a network
  */
-export const NetworkVisualization = ({
+export default function NetworkVisualization({
   control,
-}: NetworkVisualizationProps) => {
+}: NetworkVisualizationProps) {
   // A reference to the div rendered by this component
   const domNode = useRef<HTMLDivElement>(null);
 
@@ -31,16 +34,41 @@ export const NetworkVisualization = ({
   var changeChosenNodeShadow = function (values: any) {
     values.shadow = true;
     values.shadowSize = 20;
+    values.borderWidth = 6;
   };
 
   useEffect(() => {
+    // Called on double click in network
+    const onDoubleclick = (params: any) => {
+      let nodeId = network.current?.getNodeAt(params.pointer.DOM);
+      if (nodeId !== undefined && network.current) {
+        network.current.unselectAll();
+        control.expandNodeConnections(nodeId);
+      }
+    };
+
+    // Called on right-click in network
+    const onContext = (params: any) => {
+      // Do not call the default pop-up
+      params.event.preventDefault();
+    };
+
     var options = {
       clickToUse: false,
-      interaction: { hover: true, multiselect: true },
+      interaction: {
+        hover: true,
+        multiselect: true,
+        selectConnectedEdges: false,
+      },
       nodes: {
         chosen: { label: false, node: changeChosenNodeShadow },
         size: 15,
         borderWidth: 3,
+      },
+      edges: {
+        selectionWidth: 4,
+        hoverWidth: 4,
+        color: "#2B7CE9",
       },
 
       groups: {
@@ -51,6 +79,10 @@ export const NetworkVisualization = ({
         rule: {
           color: { background: "#AABBCC", border: "#334455" },
           shape: "hexagon",
+        },
+        cluster: {
+          color: { background: "#5e926f", border: "#196432" },
+          shape: "square",
         },
         // Incomplete variable (has connections to non-shown nodes)
         vari: {
@@ -72,38 +104,16 @@ export const NetworkVisualization = ({
         options
       );
 
-      network.current.on("doubleClick", function (params) {
-        let nodeId = network.current?.getNodeAt(params.pointer.DOM);
-        if (nodeId !== undefined && network.current) {
-          var nodeNumber = parseInt(nodeId.toString());
-          network.current.stopSimulation();
-          control.expandNodeConnections(nodeNumber);
-          network.current.startSimulation();
-          network.current.unselectAll();
-        }
-      });
+      network.current.on("doubleClick", onDoubleclick);
+      network.current.on("oncontext", onContext);
+
+      // Pass the network to the control, to handle interaction
+      control.setNetwork(network.current);
     }
     // Only re-run the effect when the domNode or the network changes
-  }, [domNode, network, control]);
+  }, [control]);
 
-  const onRedraw = () => {
-    if (!network.current) {
-      return;
-    }
-    network.current.stopSimulation();
-    control.ReAddAll();
-    network.current.setData(control.networkData);
-    network.current.startSimulation();
-  };
+  const classes = useStyles();
 
-  const onFit = () => {
-    network.current?.fit();
-  };
-
-  return (
-    <>
-      <MenuBar onRedraw={onRedraw} onFit={onFit} />
-      <StyledNetworkVisualization ref={domNode} />
-    </>
-  );
-};
+  return <div className={classes.root} ref={domNode}></div>;
+}

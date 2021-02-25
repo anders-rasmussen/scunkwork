@@ -45,8 +45,10 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## SVG Images
+## Creating the project
 
-- Pick some SVG images, e.g. from https://freeicons.io/
-- Optimize here: https://react-svgr.com/playground/
-  - Select: Icon, Expand Props=none
+- Create a Typescript React project with create-react-app
+- For material-UI
+  - [Install material-UI](https://material-ui.com/getting-started/installation/)
+  - [Install Roboto font] (https://github.com/fontsource/fontsource/blob/master/packages/roboto/README.md)
+  -

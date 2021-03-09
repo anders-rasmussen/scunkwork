@@ -141,7 +141,19 @@ export default function MainMenu({ control }: MainMenuProps) {
             <ListItemIcon>
               <AddAllIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary="Add All" />
+            <ListItemText primary="Add all from model" />
+          </StyledMenuItem>
+
+          <StyledMenuItem
+            onClick={() => {
+              handleClose();
+              control.deleteAll();
+            }}
+          >
+            <ListItemIcon>
+              <DeleteIconAll fontSize="small" />
+            </ListItemIcon>
+            <ListItemText primary="Delete all nodes" />
           </StyledMenuItem>
 
           <StyledMenuItem
@@ -154,19 +166,7 @@ export default function MainMenu({ control }: MainMenuProps) {
             <ListItemIcon>
               <DeleteIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary="Delete Selected Nodes" />
-          </StyledMenuItem>
-
-          <StyledMenuItem
-            onClick={() => {
-              handleClose();
-              control.addAll();
-            }}
-          >
-            <ListItemIcon>
-              <AddAllIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="Add All" />
+            <ListItemText primary="Delete selected nodes" />
           </StyledMenuItem>
 
           <MenuItem
@@ -181,18 +181,6 @@ export default function MainMenu({ control }: MainMenuProps) {
             </ListItemIcon>
             <ListItemText primary="Cluster Selected Nodes" />
           </MenuItem>
-
-          <StyledMenuItem
-            onClick={() => {
-              handleClose();
-              control.deleteAll();
-            }}
-          >
-            <ListItemIcon>
-              <DeleteIconAll fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="Delete All Nodes" />
-          </StyledMenuItem>
 
           <StyledMenuItem>
             <ListItemIcon>

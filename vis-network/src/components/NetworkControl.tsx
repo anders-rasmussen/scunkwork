@@ -93,18 +93,11 @@ export default class NetworkControl {
    * the entire network to be layed out again.
    */
   redraw() {
-    var shown = this.shownInNetwork;
-    this.shownInNetwork = new Set<IdType>();
-
-    this.network?.stopSimulation();
-
-    this.networkData.nodes.clear();
-    this.networkData.edges.clear();
-
-    shown.forEach((n) => this.showNodeInNetwork(n));
-    this.flushChanges();
-
+    // Force redraw by toggling hierarchical layout
+    this.network?.setOptions({ layout: { hierarchical: true } });
+    this.network?.setOptions({ layout: { hierarchical: false } });
     this.network?.stabilize();
+
     this.network?.startSimulation();
   }
 
@@ -174,6 +167,7 @@ export default class NetworkControl {
         group: "cluster",
       },
     };
+    this.network?.unselectAll();
     this.network?.cluster(options);
     this.flushChanges();
   }
@@ -182,19 +176,33 @@ export default class NetworkControl {
    * Delete all selected nodes
    */
   deleteSelected() {
-    const selectedNodes = new Set<IdType>(this.network?.getSelectedNodes());
+    this.deleteNodes(this.network?.getSelectedNodes());
+  }
+
+  /**
+   * @param nodeIds IDs of all nodes to delete
+   */
+  deleteNodes(nodeIds: IdType[] | undefined) {
+    if (!nodeIds || nodeIds.length === 0) {
+      return;
+    }
+
+    const nodesSet = new Set<IdType>(nodeIds);
+
     // Delete all selected nodes
-    if (selectedNodes) {
-      selectedNodes.forEach((n) => {
+    nodeIds.forEach((n) => {
+      // Call recursively on clusters, to delete nodes in cluster
+      if (this.network?.isCluster(n)) {
+        this.deleteNodes(this.network?.getNodesInCluster(n));
+      } else {
         this.networkData.nodes.remove(n);
         this.shownInNetwork.delete(n);
-      });
-    }
+      }
+    });
 
     // Delete all connected edges
     var edges = this.networkData.edges.get({
-      filter: (e: DataSet.Edge) =>
-        selectedNodes.has(e.from) || selectedNodes.has(e.to),
+      filter: (e: DataSet.Edge) => nodesSet.has(e.from) || nodesSet.has(e.to),
     });
     edges.forEach((e: DataSet.Edge) => this.networkData.edges.remove(e));
 

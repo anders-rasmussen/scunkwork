@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import { Network } from "vis-network/standalone/esm/vis-network";
 
 import NetworkControl from "./NetworkControl";
+import ContextMenu from "./ContextMenu";
+import NodePopOver from "./NodePopOver";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -24,11 +26,21 @@ type NetworkVisualizationProps = {
 export default function NetworkVisualization({
   control,
 }: NetworkVisualizationProps) {
+  const [contextMenuPosition, setContextMenuPosition] = useState<
+    { x: number; y: number } | undefined
+  >(undefined);
+  const [hoverPosition, setHoverPosition] = useState<
+    { x: number; y: number } | undefined
+  >(undefined);
+
   // A reference to the div rendered by this component
   const domNode = useRef<HTMLDivElement>(null);
 
   // A reference to the vis network instance
   const network = useRef<Network | null>(null);
+
+  // A reference to the pop over paper
+  const popOver = useRef<HTMLDivElement>(null);
 
   // Event method called when a node is chosen
   var changeChosenNodeShadow = function (values: any) {
@@ -50,8 +62,26 @@ export default function NetworkVisualization({
     // Called on right-click in network
     const onContext = (params: any) => {
       // Do not call the default pop-up
+      setContextMenuPosition(params.pointer.DOM);
       params.event.preventDefault();
     };
+
+    // Called on mouse hovering over node
+    const onHoverNode = (params: any) => {
+      // Do not call the default pop-up
+      setHoverPosition(params.pointer.DOM);
+      params.event.preventDefault();
+    };
+
+    // Called on mouse stops hovering over node
+    const onBlurNode = (params: any) => {
+      setHoverPosition(undefined);
+    };
+
+    var titleElement = document.createElement("div");
+    titleElement.style.border = "1px solid gray";
+    titleElement.style.height = "10em";
+    titleElement.style.width = "10em";
 
     var options = {
       clickToUse: false,
@@ -106,6 +136,8 @@ export default function NetworkVisualization({
 
       network.current.on("doubleClick", onDoubleclick);
       network.current.on("oncontext", onContext);
+      network.current.on("hoverNode", onHoverNode);
+      network.current.on("blurNode", onBlurNode);
 
       // Pass the network to the control, to handle interaction
       control.setNetwork(network.current);
@@ -115,5 +147,24 @@ export default function NetworkVisualization({
 
   const classes = useStyles();
 
-  return <div className={classes.root} ref={domNode}></div>;
+  return (
+    <>
+      <div className={classes.root} ref={domNode}></div>;
+      <ContextMenu
+        control={control}
+        contextMenuPosition={contextMenuPosition}
+        contextNodeId={
+          contextMenuPosition && network.current?.getNodeAt(contextMenuPosition)
+        }
+      />
+      <div ref={popOver}>
+        <NodePopOver
+          popOverPosition={hoverPosition}
+          popOverNodeId={
+            hoverPosition && network.current?.getNodeAt(hoverPosition)
+          }
+        />
+      </div>
+    </>
+  );
 }
